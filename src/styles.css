@@ -1035,3 +1035,256 @@ p { font-size: 17px; line-height: 1.75; }
   .president-signature h2 { font-size: 3.4rem; }
   .leadership-section .section-heading h2 { font-size: 3.5rem; }
 }
+
+/* Final mobile overflow guardrails.
+   Keep these rules last so the readability scale above cannot reintroduce clipping. */
+@media (max-width: 900px) {
+  .container,
+  .section > .container { min-width: 0; }
+
+  .path-grid,
+  .difference-layout,
+  .history-layout,
+  .purpose-grid,
+  .president-layout,
+  .departments-layout,
+  .prep-grid,
+  .faq-layout,
+  .contact-grid,
+  .directions-grid,
+  .community-grid,
+  .life-intro-grid,
+  .contact-intro-grid,
+  .academics-hero-grid,
+  .admissions-hero-grid,
+  .campus-hero-grid,
+  .admission-options-grid,
+  .experiences-grid,
+  .steps-grid,
+  .strand-grid,
+  .college-grid,
+  .personnel-grid { min-width: 0; }
+
+  .section-heading,
+  .section-heading h2,
+  .section-heading p,
+  .program-intro,
+  .program-intro > div,
+  .college-card-body,
+  .person-info,
+  .contact-details,
+  .contact-form-panel,
+  .faq-list,
+  .checklist-panel { min-width: 0; }
+
+  .section-heading h2,
+  .reference-section-title,
+  .section-heading p,
+  .program-intro p,
+  .college-card-body h4,
+  .department-item strong,
+  .faq-item button,
+  .contact-methods strong,
+  .footer-column a,
+  .footer-column p { overflow-wrap: anywhere; }
+
+  .academics-hero h1 .script,
+  .admissions-hero h1 .script,
+  .campus-hero h1 .script,
+  .contact-details h1 .script { white-space: normal; }
+}
+
+@media (max-width: 600px) {
+  .container { width: calc(100% - 32px); }
+  .section { padding: 64px 0; }
+
+  h1, h2, h3, h4, h5 { line-height: 1.02; }
+  .section-heading h2,
+  .reference-section-title,
+  .difference-intro h2,
+  .history-section .reference-section-title,
+  .leadership-section .section-heading h2 { font-size: clamp(2.65rem, 13vw, 4rem); line-height: .98; }
+  .section-heading h2 { margin: 12px 0 16px; }
+  .section-heading p,
+  .program-intro p,
+  .college-preview > p { line-height: 1.65; }
+
+  .site-header { width: calc(100% - 20px); }
+  .header-inner,
+  .is-scrolled .header-inner { min-width: 0; padding-inline: 14px; }
+  .brand { min-width: 0; }
+  .brand-name strong { font-size: 25px; }
+  .brand-name small { font-size: 6px; white-space: nowrap; }
+  .mobile-nav { left: 10px; right: 10px; }
+
+  .home-hero,
+  .home-hero-inner { min-height: 740px; }
+  .home-hero-inner { padding-top: 150px; padding-bottom: 105px; }
+  .home-hero h1 { font-size: clamp(3.9rem, 16vw, 5.7rem); line-height: .84; margin: 28px 0 24px; }
+  .home-hero-copy p { font-size: 16px; line-height: 1.55; }
+  .home-hero-copy p br { display: none; }
+  .hero-scroll { max-width: calc(100% - 32px); font-size: 10px; letter-spacing: .1em; }
+
+  .reasons-grid,
+  .difference-grid,
+  .moments-grid { grid-template-columns: 1fr 1fr; }
+  .reasons-grid { gap: 20px 8px; }
+  .reason { padding: 8px 4px; }
+  .reason h3,
+  .difference-item h3 { font-size: 15px; line-height: 1.15; }
+  .reason p,
+  .difference-item p { font-size: 14px; line-height: 1.55; }
+  .difference-item,
+  .difference-item:nth-child(odd),
+  .difference-item:nth-child(n+3) { padding: 20px 10px; border-left: 0; border-right: 0; border-bottom: 1px solid #cbd9c7; }
+  .difference-item:nth-child(odd) { border-right: 1px solid #cbd9c7; }
+  .difference-item:nth-child(n+3) { border-bottom: 0; }
+
+  .path-card { min-height: 390px; }
+  .path-content { padding: 24px; }
+  .path-content h3 { font-size: clamp(2.8rem, 13vw, 4rem); }
+  .path-content p { font-size: 15px; line-height: 1.55; }
+  .heading-with-link { gap: 2px; }
+  .heading-with-link .text-link { margin: 0 0 24px; }
+  .moment-image,
+  .moment-image.large { height: 180px; }
+  .moment-image span { font-size: 19px; line-height: 1.05; }
+
+  .closing { min-height: 390px; }
+  .closing-content { padding: 72px 0; }
+  .closing h2 { font-size: clamp(3rem, 13vw, 4.5rem); line-height: .98; }
+  .closing .button-row { align-items: stretch; }
+  .closing .button { white-space: normal; text-align: center; }
+
+  .story-hero { height: auto; min-height: 570px; }
+  .story-hero-content { padding-top: 125px; padding-bottom: 115px; }
+  .story-hero h1,
+  .academics-hero h1,
+  .admissions-hero h1,
+  .campus-hero h1,
+  .contact-intro h1 { font-size: clamp(3.65rem, 15vw, 5.2rem); line-height: .92; overflow-wrap: anywhere; }
+  .story-hero h1 .script { font-size: .56em; line-height: 1; }
+  .story-hero p,
+  .academics-hero p,
+  .admissions-hero p,
+  .campus-hero p,
+  .contact-intro p { font-size: 16px; line-height: 1.6; }
+  .story-year { font-size: clamp(8rem, 38vw, 12rem); right: -8px; }
+
+  .history-section .history-layout,
+  .purpose-grid,
+  .president-layout,
+  .departments-layout,
+  .prep-grid,
+  .faq-layout,
+  .contact-grid,
+  .directions-grid,
+  .community-grid,
+  .admission-options-grid,
+  .experiences-grid,
+  .academics-hero-grid,
+  .admissions-hero-grid,
+  .campus-hero-grid,
+  .contact-intro-grid { grid-template-columns: 1fr; }
+
+  .history-section .timeline-item { grid-template-columns: 64px minmax(0, 1fr) !important; gap: 10px; padding-left: 16px; }
+  .history-section .timeline-item > img { width: 64px; height: 58px; }
+  .history-section .timeline-year { font-size: 25px; }
+  .history-section .timeline-item h3 { font-size: 22px; }
+  .history-section .timeline-item p { font-size: 16px; line-height: 1.6; }
+  .history-quote { min-height: 300px; }
+  .purpose-card,
+  .values-panel { padding: 28px 22px; }
+  .values-panel { display: block; }
+  .values-panel ol { grid-template-columns: 1fr; margin-top: 20px; }
+  .purpose-card p,
+  .values-panel li,
+  .president-copy p { font-size: 16px; line-height: 1.7; }
+  .president-copy { padding: 22px 0 0 18px; }
+
+  .academics-hero,
+  .admissions-hero,
+  .campus-hero { padding-top: 112px; }
+  .academics-hero-copy,
+  .admissions-hero-text { padding-bottom: 28px; }
+  .academics-hero-image,
+  .admissions-hero-visual { height: 270px; width: 100%; margin: 0; }
+  .academics-image-label { font-size: 28px; width: 88px; }
+  .program-tabs { overflow-x: auto; justify-content: flex-start; }
+  .program-tabs button,
+  .program-tabs > .button { flex: 0 0 auto; min-width: 50%; white-space: normal; }
+  .program-intro h3 { font-size: clamp(2.7rem, 12vw, 4rem); }
+  .strand-grid,
+  .college-grid,
+  .steps-grid,
+  .personnel-grid { grid-template-columns: 1fr; }
+  .strand-card { min-height: 245px; }
+  .strand-card h4 { font-size: 18px; line-height: 1.2; }
+  .strand-card p,
+  .college-card-body p { font-size: 16px; line-height: 1.6; }
+  .college-card-body { min-height: 0; padding: 20px; }
+  .college-card-body h4 { font-size: 24px; }
+  .focus-list span,
+  .pathway-label { font-size: 11px; }
+  .department-item > button { gap: 12px; }
+  .department-item > button strong { font-size: 22px; line-height: 1.1; overflow-wrap: anywhere; }
+  .department-detail p { font-size: 16px; line-height: 1.65; }
+
+  .step-card,
+  .admission-option { min-width: 0; }
+  .step-card p,
+  .admission-option p,
+  .checklist-item,
+  .faq-answer p { font-size: 16px; line-height: 1.6; }
+  .admission-option { grid-template-columns: 1fr; padding: 20px; }
+  .admission-option-image { height: 170px; min-height: 0; }
+  .admission-option h2 { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+  .checklist-panel { padding: 24px 20px; }
+  .checklist-panel h3,
+  .faq-item button { font-size: 23px; line-height: 1.15; }
+  .faq-item button { text-align: left; white-space: normal; }
+  .assist-strip .container > div { min-width: 0; }
+  .assist-strip h2 { font-size: 26px; line-height: 1.05; }
+
+  .experiences-grid { gap: 24px; }
+  .experience-card { grid-template-columns: 1fr; }
+  .experience-image { height: 190px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; }
+  .community-grid h2 { font-size: clamp(2.8rem, 12vw, 4rem); }
+
+  .contact-intro-art { height: 190px; padding: 24px; }
+  .contact-intro-art > span { font-size: clamp(2.8rem, 13vw, 4.3rem); }
+  .contact-main { padding-top: 54px; }
+  .contact-form-panel { padding: 26px 20px; }
+  .contact-form-panel h2 { font-size: clamp(2.65rem, 12vw, 4rem); }
+  .form-field input,
+  .form-field select,
+  .form-field textarea { font-size: 16px; }
+  .map-panel { height: 250px; }
+
+  .footer-main { grid-template-columns: 1fr 1fr; gap: 30px 18px; }
+  .footer-identity,
+  .footer-contact { grid-column: 1 / -1; }
+  .footer-identity p { font-size: 27px; }
+  .footer-column a,
+  .footer-column p { font-size: 14px; }
+  .footer-bottom { font-size: 12px; line-height: 1.5; }
+}
+
+@media (max-width: 380px) {
+  .container { width: calc(100% - 24px); }
+  .home-hero,
+  .home-hero-inner { min-height: 790px; }
+  .home-hero h1 { font-size: 4rem; }
+  .home-hero .button-row .button { padding-inline: 12px; }
+  .story-hero h1,
+  .academics-hero h1,
+  .admissions-hero h1,
+  .campus-hero h1,
+  .contact-intro h1 { font-size: 3.5rem; }
+  .history-section .timeline-item { grid-template-columns: 56px minmax(0, 1fr) !important; }
+  .history-section .timeline-item > img { width: 56px; height: 52px; }
+  .footer-main { grid-template-columns: 1fr; }
+  .footer-identity,
+  .footer-contact { grid-column: auto; }
+}
