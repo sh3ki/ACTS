@@ -1,0 +1,15 @@
+export const photos = {
+  campus: '/images/campus-exterior.jpg',
+  campusGarden: '/images/campus-community.jpg',
+  campusBuilding: '/images/campus-community.jpg',
+  schoolStudent: '/images/computer-learning.jpg',
+  students: '/images/students-hero.png',
+  study: '/images/student-portrait.png',
+  classroom: '/images/collaborative-learning.jpg',
+  computer: '/images/computer-learning.jpg',
+  collaboration: '/images/collaborative-learning.jpg',
+  library: '/images/campus-exterior.jpg',
+  graduation: '/images/campus-community.jpg',
+  learning: '/images/computer-learning.jpg',
+  architecture: '/images/campus-community.jpg',
+}
