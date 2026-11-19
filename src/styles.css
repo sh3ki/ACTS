@@ -1450,3 +1450,155 @@ p { font-size: 17px; line-height: 1.75; }
   .president-section .president-signature,
   .president-section .president-copy { min-width: 0; }
 }
+
+/* Mobile layout stabilization.
+   Keep content-driven sections from clipping after the readable type scale is
+   applied. These rules intentionally come last so every page shares the same
+   overflow and wrapping behavior. */
+html,
+body,
+#root { width: 100%; max-width: 100%; overflow-x: hidden; }
+
+img,
+svg,
+video,
+canvas { max-width: 100%; }
+
+@media (max-width: 800px) {
+  .container { width: min(100% - 32px, 1320px); }
+
+  .section,
+  .purpose-section,
+  .purpose-section .container,
+  .purpose-section .purpose-grid,
+  .purpose-section .purpose-card,
+  .purpose-section .values-panel,
+  .history-section,
+  .leadership-section,
+  .programs-section,
+  .departments-section,
+  .steps-section,
+  .admissions-options,
+  .prep-section,
+  .faq-section,
+  .experiences-section,
+  .life-intro-section,
+  .gallery-section,
+  .contact-main { height: auto; min-height: 0; }
+
+  .path-grid,
+  .difference-layout,
+  .history-layout,
+  .purpose-grid,
+  .president-layout,
+  .departments-layout,
+  .prep-grid,
+  .faq-layout,
+  .contact-grid,
+  .directions-grid,
+  .community-grid,
+  .life-intro-grid,
+  .contact-intro-grid,
+  .academics-hero-grid,
+  .admissions-hero-grid,
+  .campus-hero-grid,
+  .admission-options-grid,
+  .experiences-grid,
+  .steps-grid,
+  .strand-grid,
+  .college-grid,
+  .personnel-grid { min-width: 0; }
+
+  .purpose-card,
+  .values-panel,
+  .person-card,
+  .step-card,
+  .admission-option,
+  .checklist-panel,
+  .contact-form-panel,
+  .faq-item,
+  .experience-card,
+  .college-card-body { min-width: 0; max-width: 100%; }
+
+  h1, h2, h3, h4, h5, p, li, a, button, label, span,
+  .section-heading h2,
+  .reference-section-title,
+  .department-item strong,
+  .faq-item button,
+  .contact-methods strong,
+  .footer-column a,
+  .footer-column p { overflow-wrap: anywhere; }
+
+  .button,
+  .header-cta,
+  .text-link,
+  .inline-arrow { white-space: normal; }
+
+  .purpose-section .purpose-grid { grid-auto-rows: auto; align-items: start; }
+  .purpose-section .purpose-card,
+  .purpose-section .values-panel { height: auto !important; max-height: none; overflow: visible; }
+  .purpose-section .values-panel { display: block; margin-top: 0; padding: 28px 20px 32px; }
+  .purpose-section .values-panel .eyebrow { display: inline-flex; max-width: 100%; }
+  .purpose-section .values-panel ol { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; height: auto; margin: 20px 0 0; }
+  .purpose-section .values-panel li { display: flex; align-items: flex-start; width: 100%; min-width: 0; margin: 0; padding: 0 0 14px; line-height: 1.7; }
+  .purpose-section .values-panel li span { flex: 0 0 28px; min-width: 28px; }
+
+  .step-card { min-height: 0; padding-bottom: 58px; }
+  .step-card > a { position: static; align-self: flex-start; margin-top: 10px; }
+  .admission-option { min-height: 0; }
+  .admission-option .option-watermark { max-width: none; }
+
+  .program-tabs { scrollbar-width: none; }
+  .program-tabs::-webkit-scrollbar { display: none; }
+  .program-tabs button,
+  .program-tabs > .button { min-width: 0; flex: 0 0 auto; }
+
+  .directory-controls,
+  .search-field,
+  .filter-list { max-width: 100%; }
+  .search-field { width: 100%; min-width: 0; }
+  .search-field input { min-width: 0; width: 100%; }
+
+  .footer-bottom { flex-wrap: wrap; }
+}
+
+@media (max-width: 600px) {
+  .container { width: calc(100% - 32px); }
+  .section { padding: 60px 0; }
+
+  /* The organic separators extend upward into the previous section. At this
+     narrow width that overlap can cover the last Core Values rows, so keep
+     the section boundary flush and content-driven. */
+  .purpose-section::before,
+  .president-section::before { display: none; }
+
+  /* Use a vertical content flow for the three purpose cards. A grid row can
+     retain the earlier desktop track size while the larger mobile text is
+     wrapping, which is what was dropping the fifth value below the card. */
+  .purpose-section,
+  .purpose-section .container,
+  .purpose-section .purpose-grid { overflow: visible !important; }
+  .purpose-section .purpose-grid { display: flex !important; flex-direction: column; align-items: stretch; }
+  .purpose-section .purpose-card,
+  .purpose-section .values-panel { flex: 0 0 auto; width: 100%; }
+  .purpose-section .values-panel ol,
+  .purpose-section .values-panel li { overflow: visible !important; }
+  .purpose-section .values-panel li:last-child { display: flex !important; visibility: visible !important; }
+
+  .history-section .history-layout { gap: 32px; }
+  .history-section .timeline-item { grid-template-columns: 64px minmax(0, 1fr) !important; grid-template-rows: auto auto; gap: 0 12px; }
+  .history-section .timeline-item > img { grid-column: 1; grid-row: 1; width: 64px; height: 58px; }
+  .history-section .timeline-item > .timeline-year { grid-column: 2; grid-row: 1; align-self: center; min-width: 0; }
+  .history-section .timeline-item > div { grid-column: 2; grid-row: 2; min-width: 0; padding-top: 10px; }
+
+  .gallery-grid { grid-auto-rows: auto; }
+  .gallery-grid > * { min-height: 150px; }
+  .contact-form-panel { padding: 24px 18px; }
+  .profile-dialog { width: calc(100vw - 32px); max-height: calc(100dvh - 32px); overflow-y: auto; padding: 36px 24px 28px; }
+}
+
+@media (max-width: 380px) {
+  .container { width: calc(100% - 24px); }
+  .purpose-section .values-panel { padding-inline: 16px; }
+  .purpose-section .values-panel li span { flex-basis: 24px; min-width: 24px; }
+}
