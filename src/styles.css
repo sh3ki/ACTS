@@ -1288,3 +1288,165 @@ p { font-size: 17px; line-height: 1.75; }
   .footer-identity,
   .footer-contact { grid-column: auto; }
 }
+
+/* Our Story mobile repair: the milestone row has four children
+   (dot, image, year, copy). Keep the image beside the year, then give the
+   title and description the full text column instead of squeezing them into
+   the image column. */
+@media (max-width: 600px) {
+  .story-hero {
+    height: 570px;
+    min-height: 570px;
+    background-position: 58% center;
+  }
+
+  .story-hero-content {
+    display: block;
+    height: 100%;
+    padding-top: 112px;
+    padding-bottom: 120px;
+  }
+
+  .story-hero-content > div:first-child {
+    position: relative;
+    z-index: 4;
+    max-width: 100%;
+  }
+
+  .story-hero .eyebrow { display: inline-flex; }
+  .story-hero h1 { margin: 16px 0 12px; }
+  .story-hero p { max-width: 270px; margin-bottom: 0; }
+
+  .story-year-card {
+    right: -18px;
+    width: 76%;
+    height: 138px;
+    padding: 22px 26px 0 0;
+  }
+
+  .story-year-card strong { font-size: 72px; }
+  .story-year-card span { font-size: 9px; line-height: 1.3; margin-top: 8px; }
+
+  .history-section .timeline-item {
+    grid-template-columns: 64px minmax(0, 1fr) !important;
+    grid-template-rows: auto auto;
+    gap: 0 12px;
+    align-items: start;
+    padding: 0 0 30px 16px;
+  }
+
+  .history-section .timeline-item > img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 64px;
+    height: 58px;
+    margin: 0;
+  }
+
+  .history-section .timeline-item > .timeline-year {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    font-size: 26px;
+    line-height: 1;
+    min-width: 0;
+  }
+
+  .history-section .timeline-item > div {
+    grid-column: 2;
+    grid-row: 2;
+    min-width: 0;
+    padding-top: 10px;
+  }
+
+  .history-section .timeline-item h3 {
+    font-size: 25px;
+    line-height: 1.05;
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+  }
+
+  .history-section .timeline-item p {
+    font-size: 16px;
+    line-height: 1.65;
+    margin: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .story-hero { height: 540px; min-height: 540px; }
+  .story-hero-content { padding-top: 102px; }
+  .story-hero h1 { font-size: 3.45rem; }
+  .story-year-card { height: 126px; }
+  .story-year-card strong { font-size: 64px; }
+  .history-section .timeline-item { grid-template-columns: 56px minmax(0, 1fr) !important; gap: 0 10px; }
+  .history-section .timeline-item > img { width: 56px; height: 52px; }
+}
+
+/* Our Story mobile section sizing: late typography overrides made the values
+   list taller than its grid item, allowing the next curved section to cover
+   the last value. Let the card and its parent grow naturally. */
+@media (max-width: 600px) {
+  .purpose-section,
+  .purpose-section .container,
+  .purpose-section .purpose-grid { height: auto; min-height: 0; overflow: visible; }
+
+  .purpose-section .purpose-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    align-items: start;
+  }
+
+  .purpose-section .purpose-card,
+  .purpose-section .values-panel {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none;
+    overflow: visible;
+    box-sizing: border-box;
+  }
+
+  .purpose-section .values-panel {
+    display: block;
+    margin: 0;
+    padding: 28px 20px 30px;
+  }
+
+  .purpose-section .values-panel ol {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    width: 100%;
+    height: auto;
+    margin: 18px 0 0;
+  }
+
+  .purpose-section .values-panel li {
+    min-width: 0;
+    width: 100%;
+    align-items: flex-start;
+    padding: 0 0 12px;
+    margin: 0;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+  }
+
+  .purpose-section .values-panel li + li { padding-top: 2px; }
+  .purpose-section .values-panel li span { flex: 0 0 28px; }
+
+  .purpose-section + .president-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+  }
+
+  .president-section .president-layout {
+    min-height: 0;
+    align-items: stretch;
+  }
+
+  .president-section .president-signature,
+  .president-section .president-copy { min-width: 0; }
+}
